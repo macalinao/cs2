@@ -2,9 +2,18 @@ import java.util.*;
 
 public class BinarySearch {
   public static void main(String[] args) {
-    int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-    System.out.println(find(arr, 11) + " should be " + 10);
-    System.out.println(find(arr, 100) + " should be " + -1);
+    int[] arr = BinarySearch.makeArray(100000000);
+    long time = System.currentTimeMillis();
+    System.out.println(find(arr, 901001001) + " should be 901001001");
+    System.out.println("Elapsed ms: " + (System.currentTimeMillis() - time));
+  }
+
+  public static int[] makeArray(int size) {
+    int[] arr = new int[size];
+    for (int i = 0; i < arr.length; i++) {
+      arr[i] = i;
+    }
+    return arr;
   }
 
   public static int find(int[] arr, int val) {
@@ -17,7 +26,7 @@ public class BinarySearch {
       int mid = (lo + hi) / 2;
       int v = arr[mid];
       comps++;
-      System.out.println(comps);
+      // System.out.println(comps);
       if (val == v) {
         return mid;
       } else if (val > v) {
