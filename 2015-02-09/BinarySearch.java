@@ -20,9 +20,9 @@ public class BinarySearch {
       if (val == v) {
         return mid;
       } else if (val > v) {
-        lo = mid;
+        lo = mid + 1;
       } else if (val < v) {
-        hi = mid;
+        hi = mid - 1;
       }
     }
   }
