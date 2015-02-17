@@ -4,7 +4,9 @@ public class ArrayOfObjects {
 
   public static void main(String[] args) {
     Circle[] objs = new Circle[10];
-    objs[1] = new Circle(10);
+    for (int i = 0; i < objs.length; i++) {
+      objs[i] = new Circle(Math.random() * 10);
+    }
 
     System.out.println(objs[1].getArea());
   }
