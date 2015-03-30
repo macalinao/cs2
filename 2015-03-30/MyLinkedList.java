@@ -26,6 +26,8 @@ public class MyLinkedList<T> {
 
     System.out.println(new MyLinkedList<String>(new String[]{"this", "is", "a", "test"}));
 
+    System.out.println(l.find("nutter").val);
+
   }
 
   Node<T> head;
@@ -37,6 +39,15 @@ public class MyLinkedList<T> {
     for (T e : els) {
       add(e);
     }
+  }
+
+  public Node<T> find(T val) {
+    Node<T> node = head;
+    while (node != null) {
+      if (node.val.equals(val)) return node;
+      node = node.next;
+    }
+    return null;
   }
 
   public void add(T val) {
